@@ -5,7 +5,7 @@ export const useLocation = (address) => {
    useEffect(() => {
       const getLocation = async () => {
          const location = await fetch(
-            `http://api.positionstack.com/v1/forward?access_key=${process.env.GOOGLE_API_KEY}&query=${address}`
+            `https://api.positionstack.com/v1/forward?access_key=${process.env.GOOGLE_API_KEY}&query=${address}`
          );
          const results = await location.json();
          setLocation(results.data[0]);
